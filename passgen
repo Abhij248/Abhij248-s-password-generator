@@ -1,0 +1,69 @@
+const prompt= require("prompt-sync")();
+var c;
+var n='';
+c= prompt("type 1 for a standard(easy to remember password) or  type 2 for an uncrackable password");
+var password="";
+if(c=='1')
+{
+    var d= prompt("what do you like the most?");
+    var l= d.length;
+    var e= prompt("how many characters do you want in the password?");
+
+    if(e<l)
+    {
+        console.log("required length of password is less than the length of entered input");
+        console.log("system will auto generate a standard 6 digit  password");
+        for(var i=0;i<6;i++)
+        {
+            var t=Math.floor(Math.random() * (9+ 1) + 0);
+            password=password+ t;
+            
+        }
+        console.log("your password is "+password);
+    }
+    if(e>l)
+    {
+        for(var i=0;i<e-l;i++)
+        {
+ n= n+Math.floor(Math.random() * (9+ 1) + 5);         
+        }
+        n=n+d;
+        console.log("your password is "+n );
+        
+}
+}
+ if(c=='2')
+ {
+      var s= prompt("what is your favourite food item");
+    var l= s.length;
+    var e= prompt("how many characters do you want in the password?");
+    if(e<l)
+    {
+ console.log("required length of password is less than the length of entered input");
+        console.log("system will auto generate a strong 8 digit  password");
+               for(var i=0;i<8;i++)
+               {
+                   password=password+Math.floor(Math.random() * (9+ 1) + 0);
+               }
+               console.log("your password is "+password);
+    }
+    if(e>l)
+    {
+        for(var i=0;i<e;i++)
+        {
+            if(i%2==0)
+            {
+                var u=Math.floor(Math.random() * (l-1) + 1);
+                password=password+s.charAt(u);
+            }
+            else
+            {
+                var v=Math.floor(Math.random() * (9+ 1) + 0);
+                password=password+v;
+            }
+        }
+        console.log("your password is "+password);
+    }
+ }   
+        
+    
